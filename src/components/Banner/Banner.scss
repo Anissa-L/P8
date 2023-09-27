@@ -1,0 +1,40 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 223px;
+  margin-bottom: 50px;
+  border-radius: 25px;
+  position: relative;
+  background-color: aquamarine;
+
+  @media (max-width: 768px) {
+    height: 100px;
+    margin-bottom: 40px;
+  }
+
+  &-title {
+    font-size: 48px;
+    font-weight: 500;
+    color: #ffffff;
+    position: absolute;
+    top: 36%;
+    left: 17%;
+
+    @media (min-width: 1025px) {
+      top: 34%;
+      left: 10%;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  &-img {
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
+  }
+}

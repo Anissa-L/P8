@@ -1,0 +1,15 @@
+//body
+@import "main.scss";
+
+//pages
+@import "../pages/About/About";
+@import "../pages/Erreur/Erreur";
+@import "../pages/Home/Home";
+@import "../pages/Logement/Logement";
+
+//composants
+@import "../components/Banner/Banner";
+@import "../components/Cards/Cards";
+@import "../components/Footer/Footer";
+@import "../components/Header/Header";
+@import "../components/Collapse/Collapse";
