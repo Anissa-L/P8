@@ -3,10 +3,10 @@ function Banner ({title, src, alt, children}){
     return (
         <div className="banner">
             <div className="banner-title">
-                <h1>{title}</h1>
+                <h1 className="banner-title-title">{title}</h1>
             </div>
             <div className="banner-img">
-                <img src={src} alt={alt} />
+                <img className="banner-img-image" src={src} alt={alt} />
             </div>
             {children}
         </div>
