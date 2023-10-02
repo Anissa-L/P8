@@ -10,6 +10,9 @@
   }
 
   &-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 52px;
     border-radius: 5px;
     background-color: #ff6060;
@@ -17,6 +20,20 @@
     color: #ffffff;
     padding-left: 11px;
     padding-top: 13px;
+  }
+
+  &-icon {
+    margin-right: 15px;
+  }
+
+  &-icon-anim-open {
+    transform: rotate(-180deg);
+    transition: transform 300ms ease;
+  }
+
+  &-icon-anim-close {
+    transform: rotate(0deg);
+    transition: transform 300ms ease;
   }
 
   &-description {
@@ -27,8 +44,19 @@
     padding: 16px 10px 0 12px;
     line-height: 1.3;
 
+    &-parent {
+      height: 0px;
+      overflow: hidden;
+      transition: height ease 0.3s;
+    }
+
+    &-show {
+      height: 80px;
+      overflow: hidden;
+      transition: height ease 0.3s;
+    }
     &_sécurité {
-      height: 100px;
+      height: 140px;
     }
   }
 }
