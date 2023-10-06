@@ -3,6 +3,8 @@ import DataLogement from "../../fichier.json";
 import Slider from "../../components/Slider/Slider";
 import Collapse from "../../components/Collapse/Collapse";
 import { useParams, Navigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Logement() {
   const { id } = useParams();
@@ -22,6 +24,35 @@ function Logement() {
     tags,
   } = logement;
 
+  const ratingStars = parseFloat(rating);
+
+  function generateRatingStars(ratingStars) {
+    const stars = [];
+    const maxStars = 5;
+
+    for (let i = 1; i <= maxStars; i++) {
+      if (i <= ratingStars) {
+        stars.push(
+          <FontAwesomeIcon
+            key={i}
+            icon={faStar}
+            className="logement-star logement-star-red"
+          />
+        );
+      } else {
+        stars.push(
+          <FontAwesomeIcon
+            key={i}
+            icon={faStar}
+            className="logement-star logement-star-gray"
+          />
+        );
+      }
+    }
+
+    return stars;
+  }
+
   return (
     <div className="main-logement">
       <div className="logement">
@@ -40,9 +71,15 @@ function Logement() {
         <p className="logement-location">{location}</p>
         <div className="logement-tag-and-rating">
           <div className="logement-tag-container">
-            <p className="logement-tag">{tags}</p>
+            {tags.map((tags, index) => (
+              <div key={index} className="logement-tag">
+                {tags}
+              </div>
+            ))}
           </div>
-          <div className="logement-rating-container">{rating}</div>
+          <div className="logement-rating-container">
+            {generateRatingStars(ratingStars)}
+          </div>
         </div>
         <div className="logement-collapse-container">
           <Collapse title="Description" description={description} />

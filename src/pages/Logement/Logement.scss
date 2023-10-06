@@ -59,11 +59,33 @@
 
   &-tag-container {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     height: 25px;
+  }
+
+  &-tag {
     background-color: #ff6060;
     color: #ffffff;
     border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+  }
+
+  &-rating-container {
+    display: flex;
+    gap: 5px;
+  }
+
+  &-star-red {
+    color: #ff6060;
+  }
+
+  &-star-gray {
+    color: #e3e3e3;
   }
 
   &-collapse-container {
