@@ -2,19 +2,14 @@ import React from "react";
 import DataLogement from "../../fichier.json";
 import Slider from "../../components/Slider/Slider";
 import Collapse from "../../components/Collapse/Collapse";
-import { useParams } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
 function Logement() {
   const { id } = useParams();
   const logement = DataLogement.find((logement) => logement.id === id);
 
   if (!logement) {
-    return (
-      <NavLink to="*" className="logement-erreur">
-        Logement non trouvé
-      </NavLink>
-    );
+    return <Navigate to="/error" />;
   }
 
   const {
@@ -51,7 +46,13 @@ function Logement() {
         </div>
         <div className="logement-collapse-container">
           <Collapse title="Description" description={description} />
-          <Collapse title="Équipements" description={equipments} />
+          <Collapse title="Équipements" description="">
+            <ul>
+              {equipments.map((equipments, index) => {
+                return <li key={equipments + index}>{equipments}</li>;
+              })}
+            </ul>
+          </Collapse>
         </div>
       </div>
     </div>

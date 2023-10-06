@@ -116,10 +116,11 @@ a {
 }
 
 main {
+  max-width: 1440px;
   text-decoration: none;
   background-color: #ffffff;
   padding: 0px 90px 0px 90px;
-  margin: 0;
+  margin: 0 auto;
   font-family: Montserrat;
 
   @media (max-width: 1025px) {

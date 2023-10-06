@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 
-function Collapse ({title, description}){
+function Collapse ({title, description, children}){
 const[open, setOpen] = useState(false);
 const toggle = () => {
     setOpen(!open);
@@ -16,7 +16,10 @@ const toggle = () => {
                 <FontAwesomeIcon icon={faChevronUp} className={ open ? "collapse-icon collapse-icon-anim-open":"collapse-icon collapse-icon-anim-close"} onClick={toggle}/>
             </div>
             <div className={open ? "collapse-description-show" : "collapse-description-parent"}>
-                   <div className="collapse-description"><p>{description}</p></div>
+                   <div className="collapse-description">
+                    {description && <p>{description}</p>}
+                    {children}
+                   </div>
             </div>
         </div>
     );
