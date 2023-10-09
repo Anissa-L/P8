@@ -57,28 +57,30 @@ function Logement() {
     <div className="main-logement">
       <div className="logement">
         <Slider />
-        <div className="logement-title-and-host">
-          <h2 className="logement-title">{title}</h2>
-          <div className="logement-host">
-            <p className="logement-host-name">{name}</p>
-            <img
-              className="logement-host-picture"
-              src={picture}
-              alt="propiétaire"
-            />
+        <div className="logement-container">
+          <div className="logement-title-location-tags">
+            <h2 className="logement-title">{title}</h2>
+            <p className="logement-location">{location}</p>
+            <div className="logement-tag-container">
+              {tags.map((tags, index) => (
+                <div key={index} className="logement-tag">
+                  {tags}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <p className="logement-location">{location}</p>
-        <div className="logement-tag-and-rating">
-          <div className="logement-tag-container">
-            {tags.map((tags, index) => (
-              <div key={index} className="logement-tag">
-                {tags}
-              </div>
-            ))}
-          </div>
-          <div className="logement-rating-container">
-            {generateRatingStars(ratingStars)}
+          <div className="logement-host-rating">
+            <div className="logement-host">
+              <p className="logement-host-name">{name}</p>
+              <img
+                className="logement-host-picture"
+                src={picture}
+                alt="propiétaire"
+              />
+            </div>
+            <div className="logement-rating-container">
+              {generateRatingStars(ratingStars)}
+            </div>
           </div>
         </div>
         <div className="logement-collapse-container">

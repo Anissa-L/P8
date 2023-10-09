@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 function Header (){
     return (
         <header className="header">
-            <div className="header-img" >
+            <NavLink to="/" className="header-img" >
                 <img  src="/asset/logo.png" alt="logo kasa" />
-            </div>
+            </NavLink>
             
             <nav className="header-navbar">
                

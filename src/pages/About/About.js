@@ -6,7 +6,7 @@ function About() {
     <main className="main-about">
       <Banner
         title=""
-        src="/asset/banner-about.png"
+        src="/asset/banner-about-img.png"
         alt="Image d'un paysage avec des montagnes"
       ></Banner>
       <div className="collapse-about">
