@@ -2,7 +2,7 @@
   padding: 0px 90px 0px 90px;
 
   @media (max-width: 1025px) {
-    padding: 0px 60px 0px 40px;
+    padding: 0px 60px 0px 60px;
   }
 
   @media (max-width: 768px) {
@@ -163,19 +163,17 @@
   &-collapse-container {
     display: flex;
     flex-direction: row;
-    margin-left: -68px;
     padding-bottom: 50px;
+    gap: 55px;
 
     @media (max-width: 1025px) {
       display: flex;
       flex-direction: column;
-      margin-right: -68px;
       gap: 20px;
     }
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
-      margin: 0;
     }
   }
 
