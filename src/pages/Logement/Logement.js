@@ -3,8 +3,7 @@ import DataLogement from "../../fichier.json";
 import Slider from "../../components/Slider/Slider";
 import Collapse from "../../components/Collapse/Collapse";
 import { useParams, Navigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import RatingStars from "../../components/Rating-Stars/RatingStars";
 
 function Logement() {
   const { id } = useParams();
@@ -25,33 +24,6 @@ function Logement() {
   } = logement;
 
   const ratingStars = parseFloat(rating);
-
-  function generateRatingStars(ratingStars) {
-    const stars = [];
-    const maxStars = 5;
-
-    for (let i = 1; i <= maxStars; i++) {
-      if (i <= ratingStars) {
-        stars.push(
-          <FontAwesomeIcon
-            key={i}
-            icon={faStar}
-            className="logement-star logement-star-red"
-          />
-        );
-      } else {
-        stars.push(
-          <FontAwesomeIcon
-            key={i}
-            icon={faStar}
-            className="logement-star logement-star-gray"
-          />
-        );
-      }
-    }
-
-    return stars;
-  }
 
   return (
     <div className="main-logement">
@@ -79,7 +51,7 @@ function Logement() {
               />
             </div>
             <div className="logement-rating-container">
-              {generateRatingStars(ratingStars)}
+              <RatingStars ratingStars={ratingStars} />
             </div>
           </div>
         </div>
