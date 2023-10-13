@@ -3,8 +3,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 53px;
-  column-gap: 53px;
+  row-gap: 50px;
+  column-gap: 50px;
   border-radius: 25px;
   background-color: #f6f6f6;
   padding: 50px;
@@ -64,10 +64,15 @@
     }
 
     &-title {
-      margin-top: 288px;
-      margin-left: 20px;
+      margin-top: 270px;
+      margin-left: 15px;
       font-size: 18px;
       color: #ffffff;
+
+      @media (max-width: 1025px) {
+        margin-top: 265px;
+        margin-left: 12px;
+      }
 
       @media (max-width: 768px) {
         margin-top: 210px;
