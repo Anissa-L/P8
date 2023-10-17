@@ -15,7 +15,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <Router>
+    <Router>{/*gérer la route et la navigation*/}
         {/* Header présent dans toutes les pages */}
       <Header />
       <Routes>
